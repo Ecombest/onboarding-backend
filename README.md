@@ -1,5 +1,3 @@
-# new_portfolio
-
 # onboarding-backend
 
 # todo
@@ -9,15 +7,20 @@
     Builder
     Middleware
 
+# using node 19.9.0
+
+# run
+
+npm install (if needed)
+
+npm run dev: run and watch
+npm run prod: run normally
+
 using sequelize to migrate model from code to DB
 
 # Create model
 
 create new model in ./models
-
-# Edit model file in migrations
-
-add
 
 # Update model to DB:
 
