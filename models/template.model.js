@@ -24,7 +24,7 @@ Template.init(
     },
     imageUrl: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   },
   { sequelize, modelName: "Template" }
@@ -34,6 +34,9 @@ Template.associations = (models) => {
     foreignKey: "templateId",
   });
   Template.hasMany(models.Layer, {
+    foreignKey: "templateId",
+  });
+  Template.hasMany(models.Function, {
     foreignKey: "templateId",
   });
 };

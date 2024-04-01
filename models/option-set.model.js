@@ -14,14 +14,14 @@ OptionSets.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    totalOptionSetItems: {
-      type: DataTypes.INTEGER,
-    },
   },
   { sequelize, modelName: "OptionSets" }
 );
 
 OptionSets.associate = (models) => {
+  OptionSets.hasMany(models.Option, {
+    foreignKey: "optionSetID",
+  });
   OptionSets.hasMany(models.OptionSetItems, {
     foreignKey: "optionSetID",
     as: "optionSetItems",

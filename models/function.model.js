@@ -14,16 +14,29 @@ Function.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    personalizeID: {
+
+    templateId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    templateID: {
+    layerId: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
+    },
+    optionId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
   },
   { sequelize, modelName: "Function" }
 );
+Function.associations = (models) => {
+  Function.hasOne(models.Layer, {
+    foreignKey: "layerId",
+  });
+  Function.hasOne(models.Option, {
+    foreignKey: "optionId",
+  });
+};
 
 module.exports = Function;

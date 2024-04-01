@@ -2,9 +2,7 @@
 const sequelize = require("../config/sequelize");
 
 class TemplateController {
-  constructor() {
-    this.templateModel = sequelize.models.Template;
-  }
+  constructor() {}
   async create(req, res, next) {
     const template = await sequelize.models.Template.create(req.body).catch(next);
     if (!template) return;

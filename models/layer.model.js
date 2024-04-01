@@ -12,8 +12,8 @@ Layer.init(
 
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
-      required: true,
+      allowNull: true,
+      defaultValue: "Image placeholder",
     },
     advances: {
       type: DataTypes.INTEGER,
@@ -52,12 +52,23 @@ Layer.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    categoryId: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    categoryName: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   { sequelize, modelName: "Layer" }
 );
 
 Layer.associations = (models) => {
   Layer.hasOne(models.ImageSetting, {
+    foreignKey: "layerId",
+  });
+  Layer.hasMany(models.Function, {
     foreignKey: "layerId",
   });
 };

@@ -24,6 +24,8 @@ create new model in ./models
 
 # Update model to DB:
 
+migration:generate --name [migrtion]
+
 sequelize db:migrate
 
 # Undo the last migration
