@@ -17,15 +17,15 @@ Function.init(
 
     templateId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     layerId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     optionId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
   },
   { sequelize, modelName: "Function" }

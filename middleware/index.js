@@ -3,6 +3,11 @@ function logger(req, res, next) {
   next(); // Pass control to the next middleware function
 }
 
+function ngrokHeader(req, res, next) {
+  res.setHeader("ngrok-skip-browser-warning", "true");
+  next();
+}
+
 function errorHandler(err, req, res, next) {
   console.error(err);
   res.status(500).json({ message: "Internal Server Error" });
@@ -10,5 +15,6 @@ function errorHandler(err, req, res, next) {
 
 module.exports = {
   logger,
+  ngrokHeader,
   errorHandler,
 };

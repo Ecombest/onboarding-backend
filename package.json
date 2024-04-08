@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "prod": "node index.js"
+    "prod": "node index.js",
+    "deploy": "ngrok http --domain=singular-carefully-mink.ngrok-free.app 3000"
   },
   "author": "",
   "license": "ISC",

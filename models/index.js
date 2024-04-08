@@ -1,5 +1,5 @@
 const { Condition } = require("./condition.model");
-const { FuncModel } = require("./FuncModel.model");
+const { FuncModel } = require("./function.model");
 const { ImageSetting } = require("./image-setting.model");
 const { Layer } = require("./layer.model");
 const { Option } = require("./option.model");

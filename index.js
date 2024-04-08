@@ -5,7 +5,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 
-const { logger, errorHandler } = require("./middleware");
+const { logger, errorHandler, ngrokHeader } = require("./middleware");
 const corsOptions = {
   optionsSuccessStatus: 200, // For legacy browser support
   credentials: true, // This is important.
@@ -23,7 +23,7 @@ dotenv.config();
 const connect = require("./config/connect");
 connect();
 
-app.use(logger);
+app.use(ngrokHeader);
 
 const templateRoute = require("./routes/template.routes");
 app.use("/template", templateRoute);

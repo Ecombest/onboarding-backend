@@ -34,6 +34,7 @@ class CampaignController {
       const campaign = await sequelize.models.Campaign.findOne({ where: { id } });
       res.json(campaign);
     } catch (error) {
+      console.log(error);
       res.status(500).json({ error: error.message });
     }
   }
